@@ -1,3 +1,4 @@
+// J Kim
 // The AdminSupportFactory class centralizes the logic for creating instances 
 // of different support types. The getInstance method takes the support type as 
 // input and returns an object of the corresponding support implementation class.
