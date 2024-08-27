@@ -1,0 +1,36 @@
+// Creating sample Music_Library__c records
+List<Music_Library__c> lstSongs = new List<Music_Library__c>(); 
+lstSongs.add(new Music_Library__c(Title__c='Go Johnny go',  
+                                  Album__c='Chuck Berry Is on Top',  
+                                  price__c= 2.0)); 
+ 
+lstSongs.add(new Music_Library__c(Title__c='When Doves Cry',  
+                                  Album__c='The Very Best Of Prince',  
+                                  price__c= 2.5)); 
+ 
+lstSongs.add(new Music_Library__c(Title__c='Strobe',  
+                               Album__c='For Lack of a Better Name',  
+                                  price__c= 2.0)); 
+ 
+insert lstSongs; 
+
+// Adding songs to the shopping cart and paying using Credit Card
+List<Music_Library__c> selectedSongs = [SELECT ID, price__c FROM Music_Library__c LIMIT 3]; 
+ 
+ShoppingCart cart = new ShoppingCart(); 
+for(Music_Library__c m : selectedSongs) { 
+   cart.addSong(m); 
+} 
+ 
+cart.pay(new CreditCardStrategy('Customer Name', '1234567891234567', '123', '11/2026')); 
+
+// The output will be:
+// Total amount to be paid - 6.5
+// Web service callout to pay using credit card
+
+// Paying using PayPal
+cart.pay(new PaypalStrategy('abc@xyz.com', 'StrongPwd'));
+
+// The output will be:
+// Total amount to be paid - 6.5
+// Web service callout to pay using PayPal Account
