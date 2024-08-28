@@ -1,4 +1,4 @@
-//J Kim
+// J Kim
 // AdminBasicSupportImpl class implements the IAdminSupport interface. 
 // This class represents the Basic support type with specific SLA and ticket limits.
 // Each support type has its own implementation class, which provides the 

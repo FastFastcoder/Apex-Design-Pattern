@@ -1,3 +1,5 @@
+This code is adapted from the book Apex Design Patterns with some modifications. All comments and the pattern summary were written by J. Kim.
+
 # Salesforce Strategy Pattern Example
 
 ## Overview
